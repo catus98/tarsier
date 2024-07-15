@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>WebApp</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple-icons/siimple-icons.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+    <div class="container" id="space-section">
+        <div class="rank-container">
+            <div class="rank-info" id="rank-info">
+                <img src="public/pictures/newbie.png" alt="Rank Logo" id="rank-logo" class="rank-logo">
+                <div class="rank-details">
+                    <span class="rank-name" id="rank-name">Newbie Hacker</span>
+                    <span class="rank-position" id="rank-position" style="color: red;">#1000</span>
+                    <span class="next-rank-info" id="next-rank-info">
+                        +9500 left for Amateur Hacker <img src="public/pictures/amateur.png" alt="Next Rank Logo" class="next-rank-logo">
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="public/pictures/logo.png" alt="Logo">
+        </div>
+        <div class="greeting">
+            <span class="wave">👋</span>
+            <span class="username" id="username"></span>
+        </div>
+        <div class="balance">
+            <span>Your balance</span>
+            <div class="balance-value">
+                <i class="si si-wallet icon"></i>
+                <span id="points">0</span>
+            </div>
+            <div id="claim-timer" class="timer">
+                <button class="claim-btn" onclick="claimPoints()">Collect +500 Points <i class="si si-gift"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="invite-section" style="display: none;">
+        <div class="header">
+            <i class="si si-user-plus icon"></i>
+            <span class="title">Invite</span>
+        </div>
+        <div class="earned">
+            <span>Earned from referrals</span>
+            <div class="earned-value">
+                <i class="si si-wallet icon"></i>
+                <span id="earned-points">0</span>
+            </div>
+            <button class="invite-btn">Invite friends</button>
+            <span class="referral-info">Get 10% from your friends + 5% from their referrals + 2.5% from their referrals</span>
+        </div>
+        <div class="referrals">
+            <div class="referral-header">
+                <span id="friends-count">0 Friends</span>
+                <span id="referrals-count">0 Referrals</span>
+            </div>
+            <div class="referral-list" id="referral-list">
+                <span class="no-referrals">We haven't found any users that joined with your invite. Invite to receive points!</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="task-section" style="display: none;">
+        <div class="header">
+            <i class="si si-notepad icon"></i>
+            <span class="title">Task</span>
+        </div>
+         <div class="task-list" id="task-list">
+            <div class="task-item">
+                <div class="task-icon-container">
+                    <img src="public/pictures/twitter.png" alt="Twitter Logo" class="task-logo">
+                </div>
+                <div class="task-content">
+                    <span class="task-title">Follow our Twitter</span>
+                    <span class="task-points">+3000</span>
+                </div>
+                <div class="task-action">
+                    <a href="https://twitter.com/anonymverse" target="_blank" onclick="completeTask('task1')" class="perform-btn">Perform ></a>
+                </div>
+            </div>
+            <div class="task-item">
+                <div class="task-icon-container">
+                    <img src="public/pictures/telegram.png" alt="Telegram Logo" class="task-logo">
+                </div>
+                <div class="task-content">
+                    <span class="task-title">Join our Telegram Channel</span>
+                    <span class="task-points">+3000</span>
+                </div>
+                <div class="task-action">
+                    <a href="https://t.me/anonymverse" target="_blank" onclick="completeTask('task2')" class="perform-btn">Perform ></a>
+                </div>
+            </div>
+            <div class="task-item">
+                <div class="task-icon-container">
+                    <img src="public/pictures/telegram.png" alt="Telegram Logo" class="task-logo">
+                </div>
+                <div class="task-content">
+                    <span class="task-title">Join Our Chat</span>
+                    <span class="task-points">+3000</span>
+                </div>
+                <div class="task-action">
+                    <a href="https://t.me/anonymversechat" target="_blank" onclick="completeTask('task3')" class="perform-btn">Perform ></a>
+                </div>
+            </div>
+            <div class="task-item">
+                <div class="task-icon-container">
+                    <i class="si si-user task-icon"></i>
+                    <span class="task-icon-overlay">5</span>
+                </div>
+                <div class="task-content">
+                    <span class="task-title">Invite 5 friends</span>
+                    <span class="task-points">+1000</span>
+                </div>
+            </div>
+            <div class="task-item">
+                <div class="task-icon-container">
+                    <i class="si si-user task-icon"></i>
+                    <span class="task-icon-overlay">15</span>
+                </div>
+                <div class="task-content">
+                    <span class="task-title">Invite 15 friends</span>
+                    <span class="task-points">+2500</span>
+                </div>
+            </div>
+            <div class="task-item">
+                <div class="task-icon-container">
+                    <i class="si si-user task-icon"></i>
+                    <span class="task-icon-overlay">25</span>
+                </div>
+                <div class="task-content">
+                    <span class="task-title">Invite 25 friends</span>
+                    <span class="task-points">+5000</span>
+                </div>
+            </div>
+            <div class="task-item">
+                <div class="task-icon-container">
+                    <i class="si si-user task-icon"></i>
+                    <span class="task-icon-overlay">50</span>
+                </div>
+                <div class="task-content">
+                    <span class="task-title">Invite 50 friends</span>
+                    <span class="task-points">+10000</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="wallet-section" style="display: none;">
+        <div class="header">
+            <i class="si si-wallet icon"></i>
+            <span class="title">Wallet</span>
+        </div>
+        <div class="wallet-content">
+            COMING SOON!
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="space-btn">
+            <i class="si si-home icon"></i>
+            <div class="text">Space</div>
+        </button>
+        <button class="nav-btn" id="task-btn">
+            <i class="si si-notepad icon"></i>
+            <div class="text">Task</div>
+        </button>
+        <button class="nav-btn" id="invite-btn">
+            <i class="si si-user-plus icon"></i>
+            <div class="text">Invite</div>
+        </button>
+        <button class="nav-btn" id="wallet-btn">
+            <i class="si si-wallet icon"></i>
+            <div class="text">Wallet</div>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="matrix.js"></script>
+</body>
+</html>

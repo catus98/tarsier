@@ -1,0 +1,34 @@
+[
+  {
+    "telegramId": "2064110763",
+    "points": 20550,
+    "lastClaimed": 1720921576581,
+    "nextClaim": 1720950376581,
+    "referrals": [
+      "676790053"
+    ],
+    "referredBy": "",
+    "username": "Çitos",
+    "profilePhoto": "https://api.telegram.org/file/bot7338660402:AAG0YEtzZ2lPUcc2yx85VgyDUqq433-woJs/photos/file_11.jpg",
+    "referralPoints": 50
+  },
+  {
+    "telegramId": "7027221955",
+    "points": 3500,
+    "lastClaimed": 1720921594959,
+    "nextClaim": 1720950394959,
+    "referrals": [],
+    "referredBy": "",
+    "username": "AnonymVerse Dev",
+    "profilePhoto": "https://api.telegram.org/file/bot7338660402:AAG0YEtzZ2lPUcc2yx85VgyDUqq433-woJs/photos/file_12.jpg"
+  },
+  {
+    "telegramId": "676790053",
+    "points": 500,
+    "lastClaimed": 1720924712189,
+    "nextClaim": 1720953512189,
+    "referrals": [],
+    "referredBy": "2064110763",
+    "username": "Dahat"
+  }
+]

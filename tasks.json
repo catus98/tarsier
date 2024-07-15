@@ -1,0 +1,76 @@
+[
+  {
+    "id": "task1",
+    "title": "Follow our Twitter",
+    "points": 3000,
+    "link": "https://twitter.com/anonymverse",
+    "completed": false,
+    "completedBy": [
+      "2064110763"
+    ]
+  },
+  {
+    "id": "task2",
+    "title": "Join our Telegram Channel",
+    "points": 3000,
+    "link": "https://t.me/anonymverse",
+    "completed": false,
+    "completedBy": [
+      "2064110763"
+    ],
+    "type": "telegram-check",
+    "checkUrl": "https://api.telegram.org/bot<bot_token>/getChatMember?chat_id=@anonymverse&user_id=<user_id>"
+  },
+  {
+    "id": "task3",
+    "title": "Join Our Chat",
+    "points": 3000,
+    "link": "https://t.me/anonymversechat",
+    "completed": false,
+    "completedBy": [
+      "2064110763"
+    ],
+    "type": "telegram-check",
+    "checkUrl": "https://api.telegram.org/bot<bot_token>/getChatMember?chat_id=@anonymversechat&user_id=<user_id>"
+  },
+  {
+    "id": "task4",
+    "title": "Invite 5 friends",
+    "points": 1000,
+    "link": "#",
+    "completed": false,
+    "type": "referral",
+    "requiredReferrals": 5,
+    "completedBy": []
+  },
+  {
+    "id": "task5",
+    "title": "Invite 15 friends",
+    "points": 2500,
+    "link": "#",
+    "completed": false,
+    "type": "referral",
+    "requiredReferrals": 15,
+    "completedBy": []
+  },
+  {
+    "id": "task6",
+    "title": "Invite 25 friends",
+    "points": 5000,
+    "link": "#",
+    "completed": false,
+    "type": "referral",
+    "requiredReferrals": 25,
+    "completedBy": []
+  },
+  {
+    "id": "task7",
+    "title": "Invite 50 friends",
+    "points": 10000,
+    "link": "#",
+    "completed": false,
+    "type": "referral",
+    "requiredReferrals": 50,
+    "completedBy": []
+  }
+]
