@@ -3,7 +3,7 @@ const { Telegraf, Markup } = require('telegraf');
 const botToken = '7338660402:AAG0YEtzZ2lPUcc2yx85VgyDUqq433-woJs';
 const bot = new Telegraf(botToken);
 
-const webAppUrl = 'https://www.anonymverse.com';
+const webAppUrl = 'https://www.anonymverse.xyz';
 
 bot.start((ctx) => {
     const referrerId = ctx.message.text.split(' ')[1] || '';

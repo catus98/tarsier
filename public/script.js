@@ -71,13 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (task.title.toLowerCase().includes('twitter')) {
                     const taskIcon = document.createElement('img');
-                    taskIcon.src = 'public/pictures/twitter.png';
+                    taskIcon.src = 'pictures/twitter.png';
                     taskIcon.alt = 'Twitter Logo';
                     taskIcon.className = 'task-logo';
                     taskIconContainer.appendChild(taskIcon);
                 } else if (task.title.toLowerCase().includes('telegram') || task.title.toLowerCase().includes('chat')) {
                     const taskIcon = document.createElement('img');
-                    taskIcon.src = 'public/pictures/telegram.png';
+                    taskIcon.src = 'pictures/telegram.png';
                     taskIcon.alt = 'Telegram Logo';
                     taskIcon.className = 'task-logo';
                     taskIconContainer.appendChild(taskIcon);
@@ -275,38 +275,38 @@ document.addEventListener('DOMContentLoaded', () => {
         if (points >= 1000000) {
             return {
                 rank: 'Anonymous',
-                logo: 'public/pictures/anonymous.png',
+                logo: 'pictures/anonymous.png',
                 nextRank: { name: 'Max Rank', pointsNeeded: 0, logo: '' }
             };
         } else if (points >= 500000) {
             return {
                 rank: 'Expert Hacker',
-                logo: 'public/pictures/expert.png',
-                nextRank: { name: 'Anonymous', pointsNeeded: 1000000 - points, logo: 'public/pictures/anonymous.png' }
+                logo: 'pictures/expert.png',
+                nextRank: { name: 'Anonymous', pointsNeeded: 1000000 - points, logo: 'pictures/anonymous.png' }
             };
         } else if (points >= 100000) {
             return {
                 rank: 'Advanced Hacker',
-                logo: 'public/pictures/advanced.png',
-                nextRank: { name: 'Expert Hacker', pointsNeeded: 500000 - points, logo: 'public/pictures/expert.png' }
+                logo: 'pictures/advanced.png',
+                nextRank: { name: 'Expert Hacker', pointsNeeded: 500000 - points, logo: 'pictures/expert.png' }
             };
         } else if (points >= 50000) {
             return {
                 rank: 'Basic Hacker',
-                logo: 'public/pictures/basic.png',
-                nextRank: { name: 'Advanced Hacker', pointsNeeded: 100000 - points, logo: 'public/pictures/advanced.png' }
+                logo: 'pictures/basic.png',
+                nextRank: { name: 'Advanced Hacker', pointsNeeded: 100000 - points, logo: 'pictures/advanced.png' }
             };
         } else if (points >= 10000) {
             return {
                 rank: 'Amateur Hacker',
-                logo: 'public/pictures/amateur.png',
-                nextRank: { name: 'Basic Hacker', pointsNeeded: 50000 - points, logo: 'public/pictures/basic.png' }
+                logo: 'pictures/amateur.png',
+                nextRank: { name: 'Basic Hacker', pointsNeeded: 50000 - points, logo: 'pictures/basic.png' }
             };
         } else {
             return {
                 rank: 'Newbie Hacker',
-                logo: 'public/pictures/newbie.png',
-                nextRank: { name: 'Amateur Hacker', pointsNeeded: 10000 - points, logo: 'public/pictures/amateur.png' }
+                logo: 'pictures/newbie.png',
+                nextRank: { name: 'Amateur Hacker', pointsNeeded: 10000 - points, logo: 'pictures/amateur.png' }
             };
         }
     }
